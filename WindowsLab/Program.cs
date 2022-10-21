@@ -16,7 +16,7 @@ namespace WindowsLab
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmCaso2_precios());
+            Application.Run(new frm3_operarios());
         }
     }
 }
