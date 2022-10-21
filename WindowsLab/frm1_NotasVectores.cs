@@ -21,31 +21,48 @@ namespace WindowsLab
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            string alumno1 = txtAlumno1.Text, alumno2 = txtAlumno2.Text, alumno3 = txtAlumno3.Text, alumno4 = txtAlumno4.Text;
+            string alumno1 = txtAlumno1.Text, alumno2 = txtAlumno2.Text, alumno3 = txtAlumno3.Text, alumno4 = txtAlumno4.Text, texto = "";
             string[] alumnos = {alumno1 , alumno2, alumno3, alumno4};
-            int[] notas = new int[3];
-            float maximo, suma;
+            double[] notas = new double[3];
+            double maximo, suma;
 
             foreach(string alumno in alumnos)
             {
                 maximo = -1;
                 suma = 0;
+                texto += alumno;
                 for(int i = 0; i < 3; i++)
                 {
-                    notas[i] = Convert.ToInt32(Interaction.InputBox("Ingrese la " + (i+1) + "a nota de " + alumno));
-                    if (notas[i] > maximo)
-                        maximo = notas[i];
+                    notas[i] = cargarNota(i, alumno);
+                    maximo = maximaNota(notas[i], maximo);
                     suma += notas[i];
+                    texto += "\t" + Math.Round(notas[i],2);
                 }
+                texto += "\n";
                 MessageBox.Show("Alumno " + alumno + "\nMaxima nota: " + maximo + "\nPromedio: " + promedio(suma));
             }
+            MessageBox.Show(texto, "Resultados");
 
             
         }
+        #region mis métodos
 
-        string promedio (float suma)
+        double cargarNota(int nroNota, string alumno)
         {
-            float aux = suma / 3;
+            return Convert.ToDouble(Interaction.InputBox("Ingrese la " + (nroNota + 1) + "a nota de " + alumno));
+        }
+
+        double maximaNota(double nota, double maximo)
+        {
+            if (nota > maximo)
+                return nota;
+            else
+                return maximo;
+        }
+
+        string promedio (double suma)
+        {
+            double aux = Math.Round(suma / 3 , 2);
             string texto;
             if (aux < 4)
                 texto = aux + ". Debe ir a recuperatorio";
@@ -55,5 +72,6 @@ namespace WindowsLab
                 texto = aux + ". Muy bien";
             return texto;
         }
+        #endregion
     }
 }

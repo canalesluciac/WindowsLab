@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,7 @@ namespace WindowsLab
         {
             string[] nombres = new string[3];
             double[] sueldo = new double[3];
+
             double totalPagado = 0, suma, acumOperario = 0;
             string nombreOperario = "nombre";
 
