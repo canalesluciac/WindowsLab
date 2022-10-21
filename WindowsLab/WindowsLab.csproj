@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,40 +47,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="frmCaso2_precios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmCaso2_precios.Designer.cs">
+      <DependentUpon>frmCaso2_precios.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmArea.cs">
+    <Compile Include="frmNotasVectores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmArea.designer.cs">
-      <DependentUpon>frmArea.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmAreaRectangulo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmEdad.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMultiplicar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmNacimiento.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmNotas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmRoles.cs">
+    <Compile Include=".Designer.cs">
+      <DependentUpon>frmNotasVectores.cs</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmArea.resx">
-      <DependentUpon>frmArea.cs</DependentUpon>
+    <EmbeddedResource Include="frmCaso2_precios.resx">
+      <DependentUpon>frmCaso2_precios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNotasVectores.resx">
+      <DependentUpon>frmNotasVectores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
