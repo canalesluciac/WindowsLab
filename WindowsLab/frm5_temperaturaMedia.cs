@@ -23,13 +23,16 @@ namespace WindowsLab
         {
             string[] provincias = new string[4];
             double[] temperatura = new double[12];
-            double mediaTrimestral, mediaHistorica = -99.9;
+
+            double mediaTrimestral, mediaHistorica;
             int maxTempIndice = 0;
             string maxMedia = "", mediaProvincias = "";
 
             cargaPcias(ref provincias, 4);
             cargaTemperatura(ref temperatura, provincias, 12);
             imprimir(provincias, temperatura);
+
+            mediaHistorica = temperatura[0];
 
             for (int i = 0; i < 4; i++)
             {
