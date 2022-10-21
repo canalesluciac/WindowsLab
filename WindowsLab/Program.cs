@@ -16,7 +16,7 @@ namespace WindowsLab
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm4_mayorEdad());
+            Application.Run(new frm5_temperaturaMedia());
         }
     }
 }
