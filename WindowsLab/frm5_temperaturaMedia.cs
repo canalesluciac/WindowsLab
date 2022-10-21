@@ -35,9 +35,9 @@ namespace WindowsLab
             {
                 mediaTrimestral = tempMediaTrimestral(temperatura, i);
                 maxMedia = mediaTrimestralMayor(provincias, ref maxTempIndice, i, mediaTrimestral, ref mediaHistorica);
-                mediaProvincias += provincias[i] + ": " + mediaTrimestral + "°\n";
+                mediaProvincias += provincias[i] + ": " + Math.Round(mediaTrimestral,2) + "°\n";
             }
-            MessageBox.Show(mediaProvincias + "\nMaxima temperatura media: " + maxMedia + " (" + mediaHistorica + "°)", "Media Provincias e Historica");
+            MessageBox.Show(mediaProvincias + "\nMaxima temperatura media: " + maxMedia + " (" + Math.Round(mediaHistorica,2) + "°)", "Media Provincias e Historica");
         }
 
         #region metodos
@@ -54,12 +54,13 @@ namespace WindowsLab
             int cont = 0, cont2 = 1;
             for (int i = 0; i < cantidad; i++, cont2++)
             {
-                if (cont2 == 5)
-                    cont2 = 1;
+                
                 string aux = "Ingrese TEMPERATURA MENSUAL " + cont2 + " de " + provincias[cont];
                 temperatura[i] = Convert.ToDouble(Interaction.InputBox(aux));
-                if ((i + 1) % 4 == 0)
+                if ((i + 1) % 3 == 0)
                     cont++;
+                if (cont2 == 3)
+                    cont2 = 0;
 
             }
         }
@@ -73,12 +74,12 @@ namespace WindowsLab
                 aux += "\n" + provincia + " ";
                 for (int i = 0; i < 3; i++, cont++)
                 {
-                    aux += temperaturas[cont] + "°  ";
+                    aux += Math.Round(temperaturas[cont],2) + "°  ";
 
                 }
 
             }
-            MessageBox.Show(aux, "Temperaturas");
+            MessageBox.Show(aux, "Temperaturas Trimestrales");
         }
 
         double tempMediaTrimestral(double[] temperaturas, int cantidad)
