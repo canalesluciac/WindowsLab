@@ -11,10 +11,10 @@ using Microsoft.VisualBasic;
 
 namespace WindowsLab
 {
-    public partial class frmCaso2_precios : Form
+    public partial class frm2_precios : Form
 
     {
-        public frmCaso2_precios()
+        public frm2_precios()
         {
             InitializeComponent();
         }

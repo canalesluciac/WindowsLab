@@ -65,17 +65,17 @@
     <Compile Include="frm5_temperaturaMedia.Designer.cs">
       <DependentUpon>frm5_temperaturaMedia.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCaso2_precios.cs">
+    <Compile Include="frm2_precios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCaso2_precios.Designer.cs">
-      <DependentUpon>frmCaso2_precios.cs</DependentUpon>
+    <Compile Include="frm2_precios.Designer.cs">
+      <DependentUpon>frm2_precios.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmNotasVectores.cs">
+    <Compile Include="frm1_NotasVectores.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include=".Designer.cs">
-      <DependentUpon>frmNotasVectores.cs</DependentUpon>
+      <DependentUpon>frm1_NotasVectores.cs</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program.cs" />
@@ -89,11 +89,11 @@
     <EmbeddedResource Include="frm5_temperaturaMedia.resx">
       <DependentUpon>frm5_temperaturaMedia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCaso2_precios.resx">
-      <DependentUpon>frmCaso2_precios.cs</DependentUpon>
+    <EmbeddedResource Include="frm2_precios.resx">
+      <DependentUpon>frm2_precios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmNotasVectores.resx">
-      <DependentUpon>frmNotasVectores.cs</DependentUpon>
+    <EmbeddedResource Include="frm1_NotasVectores.resx">
+      <DependentUpon>frm1_NotasVectores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

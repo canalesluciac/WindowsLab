@@ -1,6 +1,6 @@
 ﻿namespace WindowsLab
 {
-    partial class frmNotasVectores
+    partial class frm1_NotasVectores
     {
         /// <summary>
         /// Variable del diseñador necesaria.

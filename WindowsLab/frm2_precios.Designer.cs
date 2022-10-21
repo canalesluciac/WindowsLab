@@ -1,6 +1,6 @@
 ﻿namespace WindowsLab
 {
-    partial class frmCaso2_precios
+    partial class frm2_precios
     {
         /// <summary>
         /// Required designer variable.

@@ -22,47 +22,57 @@ namespace WindowsLab
         {
             string[] nombres = new string[3];
             double[] sueldo = new double[3];
-            double totalPagado = 0, suma, maximo = 0;
+            double totalPagado = 0, suma, acumOperario = 0;
             string nombreOperario = "nombre";
 
-            for (int i = 0; i < 3; i++)
+
+            for (int i = 0; i < nombres.Length; i++)    // operario
             {
-                nombres[i] = Interaction.InputBox("Nombre del operario: ");
-                suma = sumaTrimestral();
-                maximo = mayorIngreso(suma, maximo, ref nombreOperario, nombres[i]);
+                nombres[i] = cargaNombre(nombres, i);
+                suma = 0;
+                for (int j=0; j<sueldo.Length; j++)     // sueldo mensual
+                {
+                    sueldo[j] = cargaSueldo(sueldo, j, nombres[i]);
+                    suma += sueldo[j];
+                }
+                acumOperario = maximoOperario(suma, acumOperario, i);
+                nombreOperario = maximoOperario(nombres, i, suma, acumOperario);
+
                 totalPagado += suma;
             }
-            MessageBox.Show("Total pagado: $" + totalPagado + "\n" + nombreOperario + " tuvo el mayor ingreso acumulado ($" + maximo + ")");
+            MessageBox.Show("Total pagado: $" + totalPagado + "\n" + nombreOperario + " tuvo el mayor ingreso acumulado ($" + acumOperario + ")", "Resultados");
         }
 
         #region mis métodos
-        double sumaTrimestral ()
+        string cargaNombre (string[] nombres, int i)
         {
-            double[] sueldo = new double[3];
-            double suma = 0;
+            return Interaction.InputBox("Nombre del operario: ", "Ingrese nombre");
+        }
+
+        double cargaSueldo(double[] sueldo, int mes, string nombre)
+        {
             string texto = "";
-            for (int j = 0; j<3; j++)
-            {
-                texto = "Sueldo de ultimo " + (j+1) + " meses: ";
-                sueldo[j] = Convert.ToDouble(Interaction.InputBox(texto));
-                suma += sueldo[j];
-            }
-            return suma;
-
+            texto = "Sueldo de ultimo " + (mes + 1) + "° mes de " + nombre +": ";
+            return Convert.ToDouble(Interaction.InputBox(texto, "Ingrese sueldo"));
         }
 
-        double mayorIngreso(double suma, double maximo, ref string nombreMayor, string nombreAct)
+        string maximoOperario(string[] nombres, int i, double suma, double maximo)
         {
-            double aux;
-            if (suma > maximo)
-            {
-                aux = suma;
-                nombreMayor = nombreAct;
-            }
+            if (i == 0 || suma > maximo)
+                return nombres[0];
             else
-                aux = maximo;
-            return aux;
+                return nombres[i];
         }
+
+        double maximoOperario(double suma, double maximo, int i)
+        {
+            if (i == 0 || suma > maximo)
+                return suma;
+            else
+                return -1;
+        }
+
+       
         #endregion
     }
 }

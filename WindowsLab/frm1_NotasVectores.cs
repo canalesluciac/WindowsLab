@@ -12,9 +12,9 @@ using Microsoft.VisualBasic;
 
 namespace WindowsLab
 {
-    public partial class frmNotasVectores : Form
+    public partial class frm1_NotasVectores : Form
     {
-        public frmNotasVectores()
+        public frm1_NotasVectores()
         {
             InitializeComponent();
         }
