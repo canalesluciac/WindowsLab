@@ -53,6 +53,12 @@
     <Compile Include="frm3_operarios.Designer.cs">
       <DependentUpon>frm3_operarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm4_mayorEdad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm4_mayorEdad.Designer.cs">
+      <DependentUpon>frm4_mayorEdad.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCaso2_precios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frm3_operarios.resx">
       <DependentUpon>frm3_operarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm4_mayorEdad.resx">
+      <DependentUpon>frm4_mayorEdad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCaso2_precios.resx">
       <DependentUpon>frmCaso2_precios.cs</DependentUpon>
